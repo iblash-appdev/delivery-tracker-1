@@ -5,7 +5,7 @@ class CreateTrackers < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.string :delivery_date
       t.string :detail
-      t.string :descriptioin
+      t.string :description
 
       t.timestamps
     end

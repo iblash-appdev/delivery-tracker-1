@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2023_05_01_191034) do
     t.integer "user_id"
     t.string "delivery_date"
     t.string "detail"
-    t.string "descriptioin"
+    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

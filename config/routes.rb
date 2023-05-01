@@ -1,6 +1,25 @@
 Rails.application.routes.draw do
 
+  get("/", { :controller => "trackers", :action => "index" })
 
+  # Routes for the Tracker resource:
+
+  # CREATE
+  post("/insert_tracker", { :controller => "trackers", :action => "create" })
+          
+  # READ
+  get("/trackers", { :controller => "trackers", :action => "index" })
+  
+  get("/trackers/:path_id", { :controller => "trackers", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_tracker/:path_id", { :controller => "trackers", :action => "update" })
+  
+  # DELETE
+  get("/delete_tracker/:path_id", { :controller => "trackers", :action => "destroy" })
+
+  #------------------------------
 
   # Routes for the User account:
 
@@ -27,25 +46,6 @@ Rails.application.routes.draw do
   # SIGN OUT        
   get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
              
-  #------------------------------
-
-  # Routes for the Tracker resource:
-
-  # CREATE
-  post("/insert_tracker", { :controller => "trackers", :action => "create" })
-          
-  # READ
-  get("/trackers", { :controller => "trackers", :action => "index" })
-  
-  get("/trackers/:path_id", { :controller => "trackers", :action => "show" })
-  
-  # UPDATE
-  
-  post("/modify_tracker/:path_id", { :controller => "trackers", :action => "update" })
-  
-  # DELETE
-  get("/delete_tracker/:path_id", { :controller => "trackers", :action => "destroy" })
-
   #------------------------------
 
 end
