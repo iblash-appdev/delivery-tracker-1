@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_01_190522) do
+ActiveRecord::Schema.define(version: 2023_05_01_191034) do
 
   create_table "trackers", force: :cascade do |t|
     t.string "status"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2023_05_01_190522) do
     t.string "delivery_date"
     t.string "detail"
     t.string "descriptioin"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.integer "trackers_count"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
