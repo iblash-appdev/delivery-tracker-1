@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Tracker #<%= @the_tracker.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/trackers">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_tracker/<%= @the_tracker.id %>">
+          Delete tracker
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Status
+      </dt>
+      <dd>
+        <%= @the_tracker.status %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_tracker.user_id %>
+      </dd>
+
+      <dt>
+        Delivery date
+      </dt>
+      <dd>
+        <%= @the_tracker.delivery_date %>
+      </dd>
+
+      <dt>
+        Detail
+      </dt>
+      <dd>
+        <%= @the_tracker.detail %>
+      </dd>
+
+      <dt>
+        Descriptioin
+      </dt>
+      <dd>
+        <%= @the_tracker.descriptioin %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_tracker.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_tracker.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit tracker
+    </h2>
+
+    <form action="/modify_tracker/<%= @the_tracker.id %>"  method="post" >
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status" value="<%= @the_tracker.status %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_tracker.user_id %>">
+      </div>
+
+      <div>
+        <label for="delivery_date_box">
+          Delivery date
+        </label>
+
+        <input type="text" id="delivery_date_box" name="query_delivery_date" value="<%= @the_tracker.delivery_date %>">
+      </div>
+
+      <div>
+        <label for="detail_box">
+          Detail
+        </label>
+
+        <input type="text" id="detail_box" name="query_detail" value="<%= @the_tracker.detail %>">
+      </div>
+
+      <div>
+        <label for="descriptioin_box">
+          Descriptioin
+        </label>
+
+        <input type="text" id="descriptioin_box" name="query_descriptioin" value="<%= @the_tracker.descriptioin %>">
+      </div>
+
+      <button>
+        Update tracker
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

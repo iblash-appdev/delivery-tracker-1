@@ -1,0 +1,150 @@
+<div>
+  <div>
+    <h1>
+      List of all trackers
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new tracker
+    </h2>
+
+    <form action="/insert_tracker" method="post">
+      <div>
+        <label for="status_box">
+          Status
+        </label>
+
+        <input type="text" id="status_box" name="query_status">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="delivery_date_box">
+          Delivery date
+        </label>
+
+        <input type="text" id="delivery_date_box" name="query_delivery_date">
+      </div>
+
+      <div>
+        <label for="detail_box">
+          Detail
+        </label>
+
+        <input type="text" id="detail_box" name="query_detail">
+      </div>
+
+      <div>
+        <label for="descriptioin_box">
+          Descriptioin
+        </label>
+
+        <input type="text" id="descriptioin_box" name="query_descriptioin">
+      </div>
+
+      <button>
+        Create tracker
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Status
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Delivery date
+        </th>
+
+        <th>
+          Detail
+        </th>
+
+        <th>
+          Descriptioin
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_trackers.each do |a_tracker| %>
+      <tr>
+        <td>
+          <%= a_tracker.id %>
+        </td>
+
+        <td>
+          <%= a_tracker.status %>
+        </td>
+
+        <td>
+          <%= a_tracker.user_id %>
+        </td>
+
+        <td>
+          <%= a_tracker.delivery_date %>
+        </td>
+
+        <td>
+          <%= a_tracker.detail %>
+        </td>
+
+        <td>
+          <%= a_tracker.descriptioin %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_tracker.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_tracker.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/trackers/<%= a_tracker.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
